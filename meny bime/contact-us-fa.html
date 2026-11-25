@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+        <link rel="icon" type="image/png" href="../images/logo.webp">
+    <meta charset="UTF-8" />
+    <!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=77f9c255-5596-4e87-9a79-252260e8a821
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تماس با ما | بیمه ایران</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+      }
+      :root {
+        --blue: #0756a5;
+        --deep: #073b78;
+        --gold: #e5ad35;
+        --bg: #f3f7fc;
+        --text: #1f2937;
+        --muted: #68778b;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.9;
+        min-height: 100vh;
+      }
+      .topbar {
+        background: linear-gradient(110deg, var(--deep), var(--blue));
+        color: #fff;
+        padding: 13px 20px;
+      }
+      .topbar-inner {
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 18px;
+      }
+      .topbar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .wrap {
+        max-width: 1000px;
+        margin: 35px auto;
+        padding: 0 18px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #fff, #eaf3ff);
+        border: 1px solid #dce8f6;
+        border-radius: 22px;
+        padding: 32px 30px;
+        margin-bottom: 22px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: #d9eaff;
+        left: -50px;
+        top: -75px;
+        opacity: 0.7;
+      }
+      .eyebrow {
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 5px;
+      }
+      h1 {
+        font-size: clamp(25px, 4vw, 34px);
+        line-height: 1.6;
+        color: var(--deep);
+        margin-bottom: 7px;
+      }
+      .hero p {
+        color: var(--muted);
+        max-width: 700px;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 20px;
+        align-items: start;
+      }
+      .panel {
+        background: #fff;
+        border: 1px solid #e0e8f2;
+        border-radius: 18px;
+        padding: 24px;
+        box-shadow: 0 7px 20px rgba(20, 55, 90, 0.045);
+      }
+      h2 {
+        font-size: 20px;
+        color: var(--deep);
+        margin-bottom: 15px;
+      }
+      .intro {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: -10px;
+        margin-bottom: 18px;
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        background: #f8fbff;
+        border: 1px solid #e2ebf6;
+        border-radius: 13px;
+        padding: 14px 15px;
+        margin-bottom: 12px;
+        min-width: 0;
+      }
+      .icon {
+        flex: 0 0 43px;
+        width: 43px;
+        height: 43px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: #e7f1ff;
+        color: var(--blue);
+        font-size: 21px;
+      }
+      .label {
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 1px;
+      }
+      .value {
+        font-size: 15px;
+        font-weight: 700;
+        direction: ltr;
+        text-align: right;
+        overflow-wrap: anywhere;
+      }
+      .item a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+      .item a:hover {
+        text-decoration: underline;
+      }
+      .phone-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .note {
+        margin-top: 15px;
+        background: #fff8e8;
+        border: 1px solid #f2dfae;
+        color: #795b19;
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-size: 12px;
+      }
+      .contact-band {
+        margin-top: 20px;
+        background: linear-gradient(120deg, var(--deep), var(--blue));
+        color: #fff;
+        border-radius: 18px;
+        padding: 22px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+      .contact-band h2 {
+        color: #fff;
+        margin: 0 0 4px;
+      }
+      .contact-band p {
+        font-size: 13px;
+        color: #e2edfb;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        border-radius: 10px;
+        padding: 9px 14px;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .btn-light {
+        background: #fff;
+        color: var(--deep);
+      }
+      .btn-outline {
+        border: 1px solid #a9c8ed;
+        color: #fff;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        padding: 22px 12px;
+      }
+      @media (max-width: 700px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+        .wrap {
+          margin-top: 20px;
+        }
+        .hero {
+          padding: 25px 21px;
+        }
+        .panel {
+          padding: 20px;
+        }
+      }
+      @media (max-width: 420px) {
+        .value {
+          font-size: 13px;
+        }
+        .contact-band {
+          padding: 20px;
+        }
+        .actions {
+          width: 100%;
+        }
+        .btn {
+          flex: 1;
+          text-align: center;
+        }
+      }
+    </style>
+
+    <style>
+      .site-footer {
+        margin-top: 42px;
+        background: linear-gradient(125deg, #062f63, #0756a5);
+        color: #fff;
+        padding: 30px 18px 18px;
+        text-align: center;
+        direction: rtl;
+      }
+      .site-footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .site-footer-brand {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 7px;
+      }
+      .site-footer-caption {
+        font-size: 13px;
+        color: #dceaff;
+        margin: 0 0 17px;
+      }
+      .site-footer-phones {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 0 auto 17px;
+      }
+      .site-footer-phones a {
+        display: inline-block;
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 10px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.08);
+        text-decoration: none;
+        font-weight: 700;
+        direction: ltr;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .site-footer-phones a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      .site-footer-contact {
+        display: inline-block;
+        color: #073b78;
+        background: #fff;
+        text-decoration: none;
+        padding: 8px 15px;
+        border-radius: 9px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .site-footer-copy {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 22px;
+        padding-top: 13px;
+        color: #c9dcf5;
+        font-size: 11px;
+      }
+      @media (max-width: 480px) {
+        .site-footer-phones {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        .site-footer-phones a {
+          font-size: 13px;
+          padding: 9px 5px;
+        }
+        .site-footer-brand {
+          font-size: 16px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav class="navigation" aria-label="ناوبری اصلی">
+      <a class="nav-brand" href="/">مبین پوشش توانا</a>
+      <div class="nav-links">
+        <link rel="icon" type="image/png" href="../images/logo.webp">
+        <a href="../index.html">خانه و همه بیمه‌ها</a>
+        <details class="insurance-menu">
+          <summary>رشته‌های بیمه</summary>
+          <div class="menu-panel">
+            <a href="/meny%20bime/اتومبیل.html">بیمه اتومبیل</a
+            ><a href="/meny%20bime/آتش سوزی.html">بیمه آتش‌سوزی</a
+            ><a href="/meny%20bime/درمان.html">بیمه درمان</a
+            ><a href="/meny%20bime/عمر و پس انداز.html">بیمه عمر و پس‌انداز</a
+            ><a href="/meny%20bime/مهندسی.html">بیمه‌های مهندسی</a
+            ><a href="/meny%20bime/مسئولیت.html">بیمه مسئولیت</a
+            ><a href="/meny%20bime/کشتی ، هواپیما و حمل و نقل.html"
+              >بیمه کشتی، هواپیما و حمل‌ونقل</a
+            ><a href="/meny%20bime/انرژی.html">بیمه انرژی</a
+            ><a href="/meny%20bime/اتکائی.html">بیمه اتکایی</a
+            ><a href="/meny%20bime/حوادث.html">بیمه حوادث</a
+            ><a href="/meny%20bime/مسافرتی.html">بیمه مسافرتی</a
+            ><a href="/meny%20bime/پول و اعتبار.html"
+              >بیمه پول، اعتبار و تضمین</a
+            ><a href="/meny%20bime/سایر بیمه های اموال.html"
+              >سایر بیمه‌های اموال</a
+            >
+          </div>
+        </details>
+        <a href="/meny%20bime/contact-us-fa.html">تماس با ما</a>
+      </div>
+    </nav>
+
+    <main id="main" class="wrap">
+      <p id="consultation-context" class="consultation-context" hidden></p>
+      <section class="hero">
+        <div class="eyebrow">همراه شما هستیم</div>
+        <h1>تماس با ما</h1>
+        <p>
+          برای دریافت راهنمایی، پرسش درباره خدمات بیمه‌ای و ارتباط با کارشناسان،
+          از راه‌های ارتباطی زیر استفاده کنید.
+        </p>
+      </section>
+
+      <div class="layout">
+        <section class="panel">
+          <h2>راه‌های ارتباطی</h2>
+          <p class="intro">
+            با توجه به نیازتان، یکی از روش‌های زیر را انتخاب کنید.
+          </p>
+          <div class="item">
+            <div class="icon">☎</div>
+            <div>
+              <div class="label">تلفن تماس اول</div>
+              <div class="value"><a href="tel:02166591281">02166591281</a></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">☎</div>
+            <div>
+              <div class="label">تلفن تماس دوم</div>
+              <div class="value"><a href="tel:02166124806">02166124806</a></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">☎</div>
+            <div>
+              <div class="label">تلفن تماس سوم</div>
+              <div class="value"><a href="tel:02166591282">02166591282</a></div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">✉</div>
+            <div>
+              <div class="label">نشانی ایمیل</div>
+              <div class="value">
+                <a href="mailto:arefasour@yahoo.com">arefasour@yahoo.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">▣</div>
+            <div>
+              <div class="label">تلفن همراه و پیامک</div>
+              <div class="value"><a href="sms:09105626863">09105626863</a></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel">
+          <h2>پاسخ‌گوی شما هستیم</h2>
+          <address class="office-address">
+            تهران، فاطمی غربی، بین کارگر و جمالزاده، کوچه پروین، انتهای بن‌بست
+            نادر، پلاک ۲۹، ساختمان نیلوفر، واحد ۱۶<br />کد پستی:
+            <bdi>۱۴۱۸۶۳۵۶۷۴</bdi>
+          </address>
+          <p class="intro">
+            برای پیگیری درخواست یا پرسیدن سؤال درباره بیمه‌نامه‌ها، از اطلاعات
+            تماس این صفحه استفاده کنید.
+          </p>
+          <div class="item">
+            <div class="icon">◇</div>
+            <div>
+              <div class="label">خدمات</div>
+              <div class="value" dir="rtl">راهنمایی درباره خدمات بیمه‌ای</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="icon">◌</div>
+            <div>
+              <div class="label">ارتباط سریع</div>
+              <div class="value" dir="rtl">تماس یا ارسال پیام</div>
+            </div>
+          </div>
+          <div class="note">
+            ساعات پاسخ‌گویی و شرایط ارائه خدمات را از طریق شماره‌های تماس پیگیری
+            کنید.
+          </div>
+        </aside>
+      </div>
+
+      <section class="contact-band">
+        <div>
+          <h2>نیاز به راهنمایی دارید؟</h2>
+          <p>برای ارتباط با کارشناسان، یکی از گزینه‌های زیر را انتخاب کنید.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-light" href="tel:02166591281">تماس با ما</a
+          ><a class="btn btn-outline" href="mailto:arefasour@yahoo.com"
+            >ارسال ایمیل</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="site-footer-brand">شرکت خدمات بیمه‌ای مبین پوشش توانا</div>
+        <p class="site-footer-caption">
+          برای دریافت راهنمایی و اطلاعات خدمات بیمه‌ای با ما تماس بگیرید.
+        </p>
+        <div class="site-footer-phones" aria-label="شماره‌های تماس">
+          <a href="tel:02166591281" dir="ltr">02166591281</a>
+          <a href="tel:02166124806" dir="ltr">02166124806</a>
+          <a href="tel:02166591282" dir="ltr">02166591282</a>
+          <a href="tel:09105626863" dir="ltr">09105626863</a>
+        </div>
+        <a class="site-footer-contact" href="/meny%20bime/contact-us-fa"
+          >صفحه تماس با ما</a
+        >
+        <div class="site-footer-copy">© شرکت خدمات بیمه‌ای مبین پوشش توانا</div>
+      </div>
+    </footer>
+    <script src="../site.js" defer></script>
+  </body>
+</html>
